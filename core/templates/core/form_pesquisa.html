@@ -1,0 +1,56 @@
+<div class="bg-white p-4 rounded shadow-sm mt-3" data-aos="fade-up">
+    <form method="GET" action="{% url 'core:pesquisa_veiculos' %}" role="search" class="needs-validation" novalidate>
+      <div class="row gx-2 gy-2 align-items-center">
+        <div class="col-sm">
+          <label for="marca" class="visually-hidden">Marca</label>
+          <input type="text" name="marca" id="marca" class="form-control rounded-1" placeholder="Marca do veículo" value="{{ request.GET.marca|default:'' }}" required>
+        </div>
+        <div class="col-sm">
+          <label for="modelo" class="visually-hidden">Modelo</label>
+          <input type="text" name="modelo" id="modelo" class="form-control rounded-1" placeholder="Modelo do veículo" value="{{ request.GET.modelo|default:'' }}" required>
+        </div>
+        <div class="col-sm">
+          <label for="categoria" class="visually-hidden">Categoria</label>
+          <select name="categoria" id="categoria" class="form-select rounded-1">
+            <option value="">Categoria</option>
+            <option value="Pequeno">Pequeno</option>
+            <option value="Médio">Médio</option>
+            <option value="Grande">Grande</option>
+            <option value="SUV">SUV</option>
+            <option value="Luxo">Luxo</option>
+          </select>
+        </div>
+        <div class="col-sm">
+          <label for="transmissao" class="visually-hidden">Transmissão</label>
+          <select name="transmissao" id="transmissao" class="form-select rounded-1">
+            <option value="">Transmissão</option>
+            <option value="Automático">Automático</option>
+            <option value="Manual">Manual</option>
+          </select>
+        </div>
+        <div class="col-sm">
+          <label for="tipo" class="visually-hidden">Tipo do Veículo</label>
+          <select name="tipo" id="tipo" class="form-select rounded-1">
+            <option value="">Tipo</option>
+            <option value="Carro">Carro</option>
+            <option value="Moto">Moto</option>
+          </select>
+        </div>
+        <div class="col-sm">
+          <label for="valor_min" class="visually-hidden">Valor da diária</label>
+          <input type="number" name="valor_min" class="form-control rounded-1 mb-1" placeholder="Valor mín. diária" value="{{ request.GET.valor_min|default:'' }}">
+          <input type="number" name="valor_max" class="form-control rounded-1" placeholder="Valor máx. diária" value="{{ request.GET.valor_max|default:'' }}">
+        </div>
+        <div class="col-sm">
+          <label for="qtd_pessoas" class="visually-hidden">Quantidade de Pessoas</label>
+          <input type="number" name="qtd_pessoas" id="qtd_pessoas" class="form-control rounded-1" placeholder="Qtd. de pessoas" value="{{ request.GET.qtd_pessoas|default:'' }}">
+        </div>
+        <div class="col-sm-auto">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-search me-1"></i> Pesquisar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

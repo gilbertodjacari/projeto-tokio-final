@@ -1,0 +1,251 @@
+.carousel-item img {
+    transition: transform 0.5s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05);
+}
+
+.icon-card {
+    transition: transform 0.3s ease;
+}
+
+.icon-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-card svg {
+    transition: fill 0.3s ease;
+}
+
+.icon-card:hover svg {
+    fill: #0056b3;
+}
+
+
+    
+
+.veiculo-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+.veiculo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.1);
+    }
+
+.veiculo-img {
+    transition: transform 0.3s ease;
+    height: 220px;
+    object-fit: cover;
+    }
+
+.veiculo-card:hover .veiculo-img {
+    transform: scale(1.03);
+    }
+
+
+
+
+
+.categoria-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.categoria-img {
+transition: transform 0.3s ease;
+}
+
+.categoria-card:hover .categoria-img {
+transform: scale(1.03);
+}
+
+
+
+/* Título Principal */
+.section-title {
+font-size: 2.5rem;
+font-weight: bold;
+color: #333;
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-bottom: 40px;
+}
+
+/* Título do Formulário */
+.form-title {
+font-size: 2rem;
+color: #333;
+font-weight: bold;
+margin-bottom: 30px;
+}
+
+/* Estilo para cada item de contato (endereço, telefone, email) */
+.row > .col-md-4 {
+padding: 20px;
+}
+
+.row > .col-md-4 i {
+font-size: 3rem;
+margin-bottom: 15px;
+}
+
+.row > .col-md-4 p {
+font-size: 1.1rem;
+color: #555;
+}
+
+/* Estilização do Formulário */
+.form-floating .form-control {
+border-radius: 10px;
+padding: 15px;
+font-size: 1rem;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+transition: border-color 0.3s ease;
+}
+
+.form-floating .form-control:focus {
+border-color: #007bff;
+outline: none;
+}
+
+.form-floating label {
+font-weight: bold;
+}
+
+/* Estilo do Botão de Enviar */
+.submit-btn {
+background-color: #ff7f00;
+color: #fff;
+border: none;
+border-radius: 8px;
+padding: 12px 30px;
+font-size: 1.2rem;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+background-color: #e66c00;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+.section-title {
+font-size: 2rem;
+}
+
+.form-title {
+font-size: 1.7rem;
+}
+
+.form-control {
+font-size: 1rem;
+}
+
+.submit-btn {
+font-size: 1rem;
+padding: 10px 25px;
+}
+}
+
+.carousel-item {
+height: 100vh;
+min-height: 300px;
+background: no-repeat center center scroll;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+.carousel-caption {
+bottom: 270px;
+}
+
+.carousel-caption h5 {
+font-size: 45px;
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-top: 25px;
+}
+
+.carousel-caption p {
+width: 75%;
+margin: auto;
+font-size: 18px;
+line-height: 1.9;
+}
+
+.navbar-light .navbar-brand {
+color: #fff;
+font-size: 25px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 2px;
+
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+color: #fff;
+}
+
+.navbar-toggler {
+background: #fff;
+}
+
+.navbar-nav {
+text-align: center;
+}
+
+.nav-link {
+padding: .2rem 1rem;
+}
+
+.nav-link.active,.nav-link:focus{
+color: #fff;
+}
+
+.navbar-toggler {
+padding: 1px 5px;
+font-size: 18px;
+line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+color: #fff;
+}
+
+
+
+/* ignore the code below */
+
+
+.link-area
+{
+position:fixed;
+bottom:20px;
+left:20px;  
+padding:15px;
+border-radius:40px;
+background:tomato;
+}
+.link-area a
+{
+text-decoration:none;
+color:#fff;
+font-size:25px;
+}
+
+section {
+padding-top: 60px;   /* Espaço no topo */
+padding-bottom: 60px; /* Espaço na parte inferior */
+}

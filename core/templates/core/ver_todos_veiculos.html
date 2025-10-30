@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-5">Escolha o Seu Veículo</h2>
+    
+    <div class="row g-4">
+        {% for veiculo in veiculos %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ veiculo.imagem.url }}" class="card-img-top" alt="{{ veiculo.modelo }}" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title mb-2">{{ veiculo.marca }} {{ veiculo.modelo }}</h5>
+                        <p class="mb-1"><strong>Categoria:</strong> {{ veiculo.categoria }}</p>
+                        <p class="mb-1"><strong>Transmissão:</strong> {{ veiculo.transmissao }}</p>
+                        <p class="mb-1"><strong>Capacidade:</strong> {{ veiculo.capacidade_pessoas }} pessoas</p>
+                        <p class="mb-3"><strong>Valor da Diária:</strong> R$ {{ veiculo.valor_diaria }}</p>
+                        <a href="{% url 'core:reservar_veiculo' veiculo.id %}" class="btn btn-primary mt-auto">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12 text-center">
+                <p class="text-muted">Nenhum veículo encontrado.</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

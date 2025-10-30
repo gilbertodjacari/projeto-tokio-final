@@ -1,0 +1,146 @@
+
+<!-- CONTACTOS -->
+<section id="contactos" class="py-5 bg-light">
+  <div class="container">
+    <!-- Título -->
+    <h2 class="text-center mb-4 section-title">Fale connosco!</h2>
+
+    <!-- Informações de Contato -->
+    <div class="row text-center justify-content-center">
+      <!-- Endereço -->
+      <div class="col-md-4 mb-4">
+        <i class="fas fa-map-marker-alt fa-2x text-danger mb-2"></i>
+        <p><strong>Endereço:</strong><br>Rua 10, Moita, Portugal</p>
+      </div>
+
+      <!-- Telefone -->
+      <div class="col-md-4 mb-4">
+        <i class="fas fa-phone fa-2x text-success mb-2"></i>
+        <p><strong>Telefone:</strong><br>(+351) 950 000 000</p>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-4 mb-4">
+        <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+        <p><strong>Email:</strong><br>contato@luxerywells.pt</p>
+      </div>
+    </div>
+
+   <h2 class="text-center mt-5 mb-4 form-title">Envie uma Mensagem</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                {% csrf_token %}
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="id_nome" name="nome" placeholder="Seu nome" required>
+                    <label for="id_nome">Nome</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="id_email" name="email" placeholder="Seu email" required>
+                    <label for="id_email">Email</label>
+                </div>
+                
+                <div class="form-floating mb-4">
+                    <textarea class="form-control" id="id_mensagem" name="mensagem" style="height: 150px;" placeholder="Escreva aqui..." required></textarea>
+                    <label for="id_mensagem">Mensagem</label>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning text-dark px-4 fw-bold submit-btn">Enviar Mensagem</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Título Principal */
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+
+  /* Título do Formulário */
+  .form-title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  /* Estilo para cada item de contato (endereço, telefone, email) */
+  .row > .col-md-4 {
+    padding: 20px;
+  }
+
+  .row > .col-md-4 i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+
+  .row > .col-md-4 p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  /* Estilização do Formulário */
+  .form-floating .form-control {
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+  }
+
+  .form-floating .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  .form-floating label {
+    font-weight: bold;
+  }
+
+  /* Estilo do Botão de Enviar */
+  .submit-btn {
+    background-color: #ff7f00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #e66c00;
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .form-title {
+      font-size: 1.7rem;
+    }
+
+    .form-control {
+      font-size: 1rem;
+    }
+
+    .submit-btn {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
+  }
+</style>

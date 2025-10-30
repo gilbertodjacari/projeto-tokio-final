@@ -1,0 +1,45 @@
+ /* Estilização do Footer */
+  footer {
+    background-color: #343a40;
+    color: #fff;
+  }
+
+  footer h5 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #17a2b8;
+    margin-bottom: 15px;
+  }
+
+  footer ul li a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  footer ul li a:hover {
+    color: #17a2b8;
+  }
+
+  /* Estilo para a linha de separação */
+  footer hr {
+    border-top: 1px solid #6c757d;
+  }
+
+  /* Estilo do copyright */
+  footer .text-center p {
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    footer .col-md-6 {
+      text-align: center;
+    }
+
+    footer h5 {
+      font-size: 1.1rem;
+    }
+  }

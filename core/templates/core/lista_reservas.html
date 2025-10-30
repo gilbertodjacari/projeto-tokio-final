@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+  <h1 class="text-center mb-5">Minhas Reservas</h1>
+
+  <!-- Reservas Ativas -->
+  <h2 class="text-success mb-4">Reservas Ativas</h2>
+  {% for reserva in reservas %}
+    {% if not reserva.cancelada %}
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title">{{ reserva.veiculo.marca }} {{ reserva.veiculo.modelo }}</h4>
+          <p class="card-text mb-1"><strong>Data de Início:</strong> {{ reserva.data_inicio }}</p>
+          <p class="card-text mb-1"><strong>Data de Fim:</strong> {{ reserva.data_fim }}</p>
+          <p class="card-text mb-3"><strong>Valor Total:</strong> {{ reserva.valor_total }} €</p>
+          <a href="{% url 'core:cancelar_reserva' reserva.id %}" class="btn btn-danger btn-sm me-2">Cancelar</a>
+          <a href="{% url 'core:alterar_reserva' reserva.id %}" class="btn btn-warning btn-sm">Alterar</a>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <!-- Reservas Canceladas -->
+  <h2 class="text-muted mt-5 mb-4">Reservas Canceladas</h2>
+  {% for reserva in reservas %}
+    {% if reserva.cancelada %}
+      <div class="card mb-3 border-secondary">
+        <div class="card-body">
+          <h4 class="card-title text-secondary">{{ reserva.veiculo.marca }} {{ reserva.veiculo.modelo }}</h4>
+          <p class="card-text mb-1"><strong>Data de Início:</strong> {{ reserva.data_inicio }}</p>
+          <p class="card-text mb-1"><strong>Data de Fim:</strong> {{ reserva.data_fim }}</p>
+          <p class="card-text mb-2"><strong>Valor Total:</strong> {{ reserva.valor_total }} €</p>
+          <p class="text-danger fw-bold mb-0">Esta reserva foi cancelada.</p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock content %}

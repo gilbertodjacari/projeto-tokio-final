@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Resultados da Pesquisa</h1>
+
+    <!-- Critério da pesquisa -->
+    <div class="text-center mb-4">
+        {% if marca and modelo %}
+            <h4>Resultados para a marca <strong>"{{ marca }}"</strong> e o modelo <strong>"{{ modelo }}"</strong></h4>
+        {% elif marca %}
+            <h4>Resultados para a marca <strong>"{{ marca }}"</strong></h4>
+        {% elif modelo %}
+            <h4>Resultados para o modelo <strong>"{{ modelo }}"</strong></h4>
+        {% else %}
+            <h4 class="text-muted">Realize uma pesquisa por marca ou modelo.</h4>
+        {% endif %}
+    </div>
+
+    {% if veiculos %}
+        <div class="row g-4">
+            {% for veiculo in veiculos %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{ veiculo.imagem.url }}" class="card-img-top" alt="{{ veiculo.modelo }}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ veiculo.marca }} {{ veiculo.modelo }}</h5>
+                            <p class="card-text"><strong>Categoria:</strong> {{ veiculo.categoria }}</p>
+                            <p class="card-text"><strong>Valor da Diária:</strong> R$ {{ veiculo.valor_diaria }}</p>
+                            <p class="card-text"><strong>Capacidade:</strong> {{ veiculo.capacidade_pessoas }} pessoas</p>
+                            <a href="{% url 'core:reservar_veiculo' veiculo.id %}" class="btn btn-outline-primary w-100">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center mt-4" role="alert">
+            <h4 class="alert-heading">Nenhum veículo encontrado!</h4>
+            <p>Infelizmente, não encontramos veículos para os critérios informados. Tente novamente com outro filtro.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}
